@@ -1,0 +1,24 @@
+{
+  "name": "Auto File Link",
+  "version": "1.0.1",
+  "manifest_version": 2,
+  "description": "\\\\ではじまるパスをfile://リンクにする",
+  "permissions":[
+    "webRequest"
+    ,"webRequestBlocking"
+    ,"http://autofilelink/*"
+  ],
+  "icons":{
+    "48":"icon48.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "js": ["jquery.min.js","script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background":{
+    "scripts":["background.js"]
+  }
+}
